@@ -1,1 +1,40 @@
-<!DOCTYPE html><html><head><title>Parcel Sandbox</title><meta charset="UTF-8"><link href="/styles.37ccfff5.css" rel="stylesheet"><link href="/dialog-polyfill.081bafa9.css" rel="stylesheet"></head><body> <div class="box"> <h1>HTML Dialog Element</h1> <h2>Notes</h2> <ul> <li> dialog element should be a direct child of the body to avoid stacking problems </li> <li> dialog-container div is needed to know if the backdrop was clicked, there is not a custom event to check it </li> <li> dialog element is always center to the current viewport when opened, on scroll will maintain the opened position </li> <li>open a dialog doesn't lock the content scroll</li> </ul> </div> <div class="box"> <div>Modal Status: <span id="dialogStatus">close</span></div> <button id="openButton">Open modal</button> </div>  <dialog id="dialog">  <div class="dialog-container"> Modal content <button id="closeButton">Close modal</button> </div> </dialog> <script src="/src.4ae5d5ad.js"></script> </body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link href="styles.37ccfff5.css" rel="stylesheet" />
+    <link href="dialog-polyfill.081bafa9.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="box">
+      <h1>HTML Dialog Element</h1>
+      <h2>Notes</h2>
+      <ul>
+        <li>
+          dialog element should be a direct child of the body to avoid stacking
+          problems
+        </li>
+        <li>
+          dialog-container div is needed to know if the backdrop was clicked,
+          there is not a custom event to check it
+        </li>
+        <li>
+          dialog element is always center to the current viewport when opened,
+          on scroll will maintain the opened position
+        </li>
+        <li>open a dialog doesn't lock the content scroll</li>
+      </ul>
+    </div>
+    <div class="box">
+      <div>Modal Status: <span id="dialogStatus">close</span></div>
+      <button id="openButton">Open modal</button>
+    </div>
+    <dialog id="dialog">
+      <div class="dialog-container">
+        Modal content <button id="closeButton">Close modal</button>
+      </div>
+    </dialog>
+    <script src="src.4ae5d5ad.js"></script>
+  </body>
+</html>
