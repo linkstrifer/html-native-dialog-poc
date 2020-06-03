@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link href="./src/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div>
+      <div>Modal Status: <span id="dialogStatus">close</span></div>
+      <button id="openButton">Open modal</button>
+
+      <dialog id="dialog">
+        <!-- dialog-container is needed to know if the backdrop was clicked -->
+        <div class="dialog-container">
+          Modal content
+          <button id="closeButton">Close modal</button>
+        </div>
+      </dialog>
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
