@@ -1017,7 +1017,8 @@ var _window = window,
     openButton = _window.openButton,
     dialog = _window.dialog,
     closeButton = _window.closeButton,
-    dialogStatus = _window.dialogStatus;
+    dialogStatus = _window.dialogStatus,
+    polyfill = _window.polyfill;
 
 function setOpenState(open, opener) {
   if (open) {
@@ -1038,6 +1039,9 @@ openButton.addEventListener("click", function () {
     setOpenState(true, "openButton");
   } else {
     _dialogPolyfill.default.registerDialog(dialog);
+
+    polyfill.innerText = " with Polyfill";
+    setOpenState(true, "openButton");
   }
 });
 closeButton.addEventListener("click", function () {
@@ -1078,7 +1082,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56976" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58155" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

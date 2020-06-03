@@ -7,6 +7,15 @@ dialog {
   padding: 0;
 }
 
+dialog::backdrop {
+  background-color: rgba(0, 255, 255, 0.5);
+}
+
+/* Polyfill styles, has to be in a different CSS block */
+dialog + .backdrop {
+  background-color: rgba(0, 255, 255, 0.5);
+}
+
 .dialog-container {
   padding: 1em;
 }
