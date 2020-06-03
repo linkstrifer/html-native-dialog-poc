@@ -1,4 +1,4 @@
-import "dialog-polyfill";
+import dialogPolyfill from "dialog-polyfill";
 
 const { openButton, dialog, closeButton, dialogStatus } = window;
 
@@ -20,13 +20,15 @@ function checkStatus(opener) {
 
 openButton.addEventListener("click", () => {
   if (typeof dialog.showModal === "function") {
-    setOpenState(true, "openbutton");
+    setOpenState(true, "openButton");
+  } else {
+    dialogPolyfill.registerDialog(dialog);
   }
 });
 
 closeButton.addEventListener("click", () => setOpenState(false, "closeButton"));
 
-dialog.addEventListener("click", event => {
+dialog.addEventListener("click", (event) => {
   // Check if dialog was clicked or the content
   // dialog = backdrop + content
   if (event.target === dialog) {
