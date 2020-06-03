@@ -1,6 +1,6 @@
 import dialogPolyfill from "dialog-polyfill";
 
-const { openButton, dialog, closeButton, dialogStatus } = window;
+const { openButton, dialog, closeButton, dialogStatus, polyfill } = window;
 
 function setOpenState(open, opener) {
   if (open) {
@@ -23,6 +23,8 @@ openButton.addEventListener("click", () => {
     setOpenState(true, "openButton");
   } else {
     dialogPolyfill.registerDialog(dialog);
+    polyfill.innerText = " with Polyfill";
+    setOpenState(true, "openButton");
   }
 });
 

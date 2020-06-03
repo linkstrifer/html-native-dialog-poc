@@ -3,11 +3,11 @@
   <head>
     <title>Parcel Sandbox</title>
     <meta charset="UTF-8" />
-    <link href="src/styles.css" rel="stylesheet" />
     <link
       href="node_modules/dialog-polyfill/dist/dialog-polyfill.css"
       rel="stylesheet"
     />
+    <link href="src/styles.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -28,11 +28,18 @@
           on scroll will maintain the opened position
         </li>
         <li>open a dialog doesn't lock the content scroll</li>
+        <li>
+          CSS polyfill backdrop polyfill styling has to be in a different CSS
+          block
+        </li>
       </ul>
     </div>
 
     <div class="box">
-      <div>Modal Status: <span id="dialogStatus">close</span></div>
+      <div>
+        Modal Status: <span id="dialogStatus">close</span
+        ><span id="polyfill"></span>
+      </div>
       <button id="openButton">Open modal</button>
     </div>
 
